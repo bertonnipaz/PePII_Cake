@@ -76,6 +76,25 @@ legend {
     font-size:16px;
 }
 
+.login {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.login:hover {
+    background-color: #449d44;
+    border-color: #255625;
+}
+.logout {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.logout:hover {
+    background-color: #c9302c;
+    border-color: #761c19;
+    }
+
 .header-help span {
     font-weight: normal;
     text-align: center;
@@ -176,7 +195,7 @@ input[type=radio] {
 .time select,
 .datetime select {
     display: inline;
-    width: auto;
+    width: 100px; /*original = auto*/
     margin-right: 10px;
 }
 

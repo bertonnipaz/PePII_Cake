@@ -26,29 +26,61 @@ $cakeDescription = 'Sistema de Cadastro';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('bootstrap.css') ?>
-    <?= $this->Html->css('bootstrap.min.css') ?>
-    <?= $this->Html->css('bootstrap-theme.css') ?>
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+
+    <!-- <style>
+        .login {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #4cae4c;
+        }
+        .login:hover {
+            background-color: #449d44;
+            border-color: #255625;
+        }
+        .logout {
+            color: #fff;
+            background-color: #d9534f;
+            border-color: #d43f3a;
+        }
+        .logout:hover {
+            background-color: #c9302c;
+            border-color: #761c19;
+        }
+    </style> -->
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="nav navbar-nav">
+        <ul class="title-area large-3 medium-4 columns">
             <li class="name">
                 <h1><a href=""><?= $this->fetch('title') ?></a></h1>
             </li>
         </ul>
         <div class="top-bar-section">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/funcionarios">Funcionários</a></li>
-                <li><a href="/pacientes">Pacientes</a></li>
-                <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
+                <li class="right"><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
+                <li class="right"><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
+                <li class="right"><a href="/users">Funcionários</a></li>
+                <?php
+                $loguser = $this->request->session()->read ('Auth.User');
+                if($loguser) {
+                    $user = $loguser['username'];
+                    ?>
+                    <li class="logout right"><a class="logout" href="/users/logout">Logout</a></li>
+                    <li class="left"><a href="#">Bem vindo, <b><?= $user ?></b>!!</a></li>
+                    <?php
+                } else {
+                    ?>
+                    <li class="login right"><a class="login" href="/users/login">Login</a></li>
+
+                    <?php
+                }
+                ?>
             </ul>
         </div>
     </nav>
