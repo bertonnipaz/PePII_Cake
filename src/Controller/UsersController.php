@@ -26,6 +26,26 @@ class UsersController extends AppController
         $this->set('_serialize', ['users']);
     }
 
+    public function indexPacientes()
+    {
+        $users = $this->paginate($this->Users->find()
+                                                    ->where(['role' => 'paciente'])
+                                                    ->order(['name' => 'ASC']));
+
+        $this->set(compact('users'));
+        $this->set('_serialize', ['users']);
+    }
+
+    public function indexFuncionarios()
+    {
+        $users = $this->paginate($this->Users->find()
+                                                    ->where(['role' => 'funcionario'])
+                                                    /*->orWhere(['role' => 'admin'])*/);
+
+        $this->set(compact('users'));
+        $this->set('_serialize', ['users']);
+    }
+
     /**
      * View method
      *

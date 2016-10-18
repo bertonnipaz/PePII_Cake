@@ -1,6 +1,6 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
         <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
@@ -9,17 +9,17 @@
     <fieldset>
         <legend><?= __('Adicionar Usuário') ?></legend>
         <?php
-            echo $this->Form->input('name');
-            echo $this->Form->input('address');
-            echo $this->Form->input('mail');
+            echo $this->Form->input('name', ['label' => 'Nome']);
+            echo $this->Form->input('address', ['label' => 'Endereço']);
+            echo $this->Form->input('mail', ['label' => 'E-mail']);
             echo $this->Form->input('nasc', array( 'label' => 'Data de Nascimento', 'dateFormat' => 'DMY', 'minYear' => date('Y') - 70, 'maxYear' => date('Y') - 6 ));
-            echo $this->Form->input('rg');
-            echo $this->Form->input('cpf');
-            echo $this->Form->input('mobile');
-            echo $this->Form->input('phone');
-            echo $this->Form->input('role', ['options' => ['admin' => 'Admin', 'funcionario' => 'Funcionário', 'paciente' => 'Paciente']]);
-            echo $this->Form->input('username');
-            echo $this->Form->input('password');
+            echo $this->Form->input('rg', ['label' => 'RG']);
+            echo $this->Form->input('cpf', ['label' => 'CPF']);
+            echo $this->Form->input('mobile', ['label' => 'Celular']);
+            echo $this->Form->input('phone', ['label' => 'Telefone']);
+            echo $this->Form->input('role', ['label' => 'Papel', 'options' => ['admin' => 'Admin', 'funcionario' => 'Funcionário', 'paciente' => 'Paciente']]);
+            echo $this->Form->input('username', ['label' => 'Nome de Usuário']);
+            echo $this->Form->input('password', ['label' => 'Senha']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Enviar')) ?>

@@ -9,8 +9,8 @@
 <?= $this->Form->create() ?>
     <fieldset>
         <legend><?= __('Por favor, entre com o nome de usuário e senha') ?></legend>
-        <?= $this->Form->input('username') ?>
-        <?= $this->Form->input('password') ?>
+        <?= $this->Form->input('username', ['label' => 'Usuário']) ?>
+        <?= $this->Form->input('password', ['label' => 'Senha']) ?>
     </fieldset>
 <?= $this->Form->button(__('Login')); ?>
 <?= $this->Form->end() ?>

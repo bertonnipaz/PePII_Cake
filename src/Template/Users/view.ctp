@@ -1,6 +1,6 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
         <?php
             $loguser = $this->request->session()->read ('Auth.User');
             $loggedUser = $loguser['id'];
@@ -10,9 +10,28 @@
         <li><?= $this->Form->postLink(__('Deletar Usuário'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar # {0}?', $user->id)]) ?> </li>
         <?php
         }
+        $loggedRole = $loguser['role'];
+        if($user->role == 'funcionario' && $loggedRole == 'admin') {
         ?>
-        <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Novo Usuário'), ['action' => 'add']) ?> </li>
+            <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexfuncionarios']) ?> </li>
+            <li><?= $this->Html->link(__('Novo Funcionário'), ['action' => 'add']) ?> </li>
+        <?php
+        } else if($user->role == 'funcionario' && $loggedRole != 'admin') {
+        ?>
+        <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexfuncionarios']) ?> </li>
+        <?php
+        } else if($user->role == 'paciente') {
+        ?>
+            <li><?= $this->Html->link(__('Listar Pacientes'), ['action' => 'indexpacientes']) ?> </li>
+            <li><?= $this->Html->link(__('Novo Paciente'), ['action' => 'add']) ?> </li>
+        <?php
+        } else {
+        ?>
+            <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?> </li>
+            <li><?= $this->Html->link(__('Novo Usuário'), ['action' => 'add']) ?> </li>
+        <?php
+        }
+        ?>
     </ul>
 </nav>
 <div class="users view large-9 medium-8 columns content">
@@ -43,11 +62,11 @@
             <td><?= h($user->address) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Rg') ?></th>
+            <th scope="row"><?= __('RG') ?></th>
             <td><?= h($user->rg) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Cpf') ?></th>
+            <th scope="row"><?= __('CPF') ?></th>
             <td><?= h($user->cpf) ?></td>
         </tr>
         <tr>

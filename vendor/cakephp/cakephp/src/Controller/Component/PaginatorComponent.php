@@ -50,8 +50,8 @@ class PaginatorComponent extends Component
      */
     protected $_defaultConfig = [
         'page' => 1,
-        'limit' => 20,
-        'maxLimit' => 100,
+        'limit' => 15,
+        'maxLimit' => 1000,
         'whitelist' => ['limit', 'sort', 'page', 'direction']
     ];
 

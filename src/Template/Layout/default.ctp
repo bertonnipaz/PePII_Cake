@@ -63,24 +63,25 @@ $cakeDescription = 'Sistema de Cadastro';
         </ul>
         <div class="top-bar-section">
             <ul class="nav navbar-nav navbar-right">
-                <li class="right"><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
-                <li class="right"><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
-                <li class="right"><a href="/users">Funcionários</a></li>
+                <!-- <li class="right"><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li> -->
+                <!-- <li class="right"><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li> -->
                 <?php
                 $loguser = $this->request->session()->read ('Auth.User');
                 if($loguser) {
                     $user = $loguser['username'];
                     ?>
-                    <li class="logout right"><a class="logout" href="/users/logout">Logout</a></li>
+                    <li class="logout right"><a class="logout" href="/users/logout">Sair</a></li>
                     <li class="left"><a href="#">Bem vindo, <b><?= $user ?></b>!!</a></li>
                     <?php
                 } else {
                     ?>
-                    <li class="login right"><a class="login" href="/users/login">Login</a></li>
+                    <li class="login right"><a class="login" href="/users/login">Entrar</a></li>
 
                     <?php
                 }
                 ?>
+                <li class="right"><a href="/users/indexfuncionarios">Funcionários</a></li>
+                <li class="right"><a href="/users/indexpacientes">Pacientes</a></li>
             </ul>
         </div>
     </nav>
