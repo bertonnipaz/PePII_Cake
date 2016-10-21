@@ -68,9 +68,9 @@ $cakeDescription = 'Sistema de Cadastro';
                 <?php
                 // Formato 24 horas (de 1 a 24)
                 $hora = date('G');
-                if (($hora >= 6) AND ($hora < 12)) {
+                if (($hora >= 3) AND ($hora < 9)) {
                     $mensagem = "Bom dia";
-                } else if (($hora >= 12) AND ($hora < 18)) {
+                } else if (($hora >= 9) AND ($hora < 15)) {
                     $mensagem = "Boa tarde";
                 } else {
                     $mensagem = "Boa noite";
