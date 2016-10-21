@@ -4,13 +4,13 @@
         <?php
             $loguser = $this->request->session()->read ('Auth.User');
             $loggedUser = $loguser['id'];
-            if($loggedUser == $user->id) {
+            $loggedRole = $loguser['role'];
+            if($loggedUser == $user->id || $loggedRole == 'funcionario') {
         ?>
         <li><?= $this->Html->link(__('Editar Usuário'), ['action' => 'edit', $user->id]) ?> </li>
         <li><?= $this->Form->postLink(__('Deletar Usuário'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar # {0}?', $user->id)]) ?> </li>
         <?php
         }
-        $loggedRole = $loguser['role'];
         if($user->role == 'funcionario' && $loggedRole == 'admin') {
         ?>
             <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexfuncionarios']) ?> </li>
@@ -23,7 +23,7 @@
         } else if($user->role == 'paciente') {
         ?>
             <li><?= $this->Html->link(__('Listar Pacientes'), ['action' => 'indexpacientes']) ?> </li>
-            <li><?= $this->Html->link(__('Novo Paciente'), ['action' => 'add']) ?> </li>
+            <li><?= $this->Html->link(__('Cadastrar Paciente'), ['action' => 'add']) ?> </li>
         <?php
         } else {
         ?>

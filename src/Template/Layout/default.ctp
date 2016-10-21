@@ -66,12 +66,22 @@ $cakeDescription = 'Sistema de Cadastro';
                 <!-- <li class="right"><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li> -->
                 <!-- <li class="right"><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li> -->
                 <?php
+                // Formato 24 horas (de 1 a 24)
+                $hora = date('G');
+                if (($hora >= 6) AND ($hora < 12)) {
+                    $mensagem = "Bom dia";
+                } else if (($hora >= 12) AND ($hora < 18)) {
+                    $mensagem = "Boa tarde";
+                } else {
+                    $mensagem = "Boa noite";
+                }
+                // echo $mensagem;
                 $loguser = $this->request->session()->read ('Auth.User');
                 if($loguser) {
                     $user = $loguser['username'];
                     ?>
                     <li class="logout right"><a class="logout" href="/users/logout">Sair</a></li>
-                    <li class="left"><a href="#">Bem vindo, <b><?= $user ?></b>!!</a></li>
+                    <li class="left"><a href="#"><?= $mensagem ?>, <b><?= $user ?></b>!!</a></li>
                     <?php
                 } else {
                     ?>
