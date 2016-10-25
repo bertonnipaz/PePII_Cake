@@ -46,6 +46,20 @@ class UsersController extends AppController
         $this->set('_serialize', ['users']);
     }
 
+    public function indexBusca()
+    {
+        if ($this->request->is('post')) {
+            $user = $this->Users->newEntity();
+            $user = $this->Users->patchEntity($user, $this->request->data);
+            // var_dump($user);
+            // $test = $this->request->data['search'];
+            $users = $this->paginate($this->Users->find()
+                                                    ->where(['name LIKE' => '%' . $user->name . '%']));
+
+        }
+        $this->set(compact('users'));
+        $this->set('_serialize', ['users']);
+    }
     /**
      * View method
      *
