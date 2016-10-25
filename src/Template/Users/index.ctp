@@ -1,7 +1,13 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Ações') ?></li>
+        <?php
+        $loguser = $this->request->session()->read ('Auth.User');
+        $loggedRole = $loguser['role'];
+        if($loggedRole == 'funcionario' || $loggedRole == 'admin') {
+        ?>
         <li><?= $this->Html->link(__('Novo Usuário'), ['action' => 'add']) ?></li>
+        <?php } ?>
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">
@@ -51,7 +57,7 @@
                 if($loggedUser == $user->id) {
                 ?>
                 <?= $this->Html->link(__('Editar'), ['action' => 'edit', $user->id]) ?>
-                <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar # {0}?', $user->id)]) ?>
+                <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar {0}?', $user->name)]) ?>
                 <?php
                 }
                 ?>

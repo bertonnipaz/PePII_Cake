@@ -59,7 +59,7 @@
                 if($loggedUser == $user->id || $loggedRole == 'admin') {
                 ?>
                 <?= $this->Html->link(__('Editar'), ['action' => 'edit', $user->id]) ?>
-                <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar # {0}?', $user->id)]) ?>
+                <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar {0}?', $user->name)]) ?>
                 <?php
                 }
                 ?>

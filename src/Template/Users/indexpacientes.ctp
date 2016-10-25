@@ -40,7 +40,8 @@
                 <!-- <td><?= h($user->password) ?></td> -->
                 <!-- <td><?= h($user->mail) ?></td> -->
                 <td><?= h($user->name) ?></td>
-                <td><?= h($user->nasc) ?></td>
+                <!-- <td><?= ($user->nasc->i18nFormat('dd/MM/yyyy')) ?></td> -->
+                <td><?= ($user->nasc->nice(null, 'pt_BR')) ?></td>
                 <!-- <td><?= h($user->role) ?></td> -->
                 <!-- <td><?= h($user->address) ?></td> -->
                 <!-- <td><?= h($user->rg) ?></td> -->
@@ -55,7 +56,7 @@
                 ?>
                 <?= $this->Html->link(__('Ver'), ['action' => 'view', $user->id]) ?>
                 <?= $this->Html->link(__('Editar'), ['action' => 'edit', $user->id]) ?>
-                <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar # {0}?', $user->id)]) ?>
+                <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar {0}?', $user->name)]) ?>
                 <?php
                 }
                 ?>

@@ -8,7 +8,7 @@
             if($loggedUser == $user->id || $loggedRole == 'funcionario') {
         ?>
         <li><?= $this->Html->link(__('Editar Usuário'), ['action' => 'edit', $user->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Deletar Usuário'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar # {0}?', $user->id)]) ?> </li>
+        <li><?= $this->Form->postLink(__('Deletar Usuário'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar {0}?', $user->name)]) ?> </li>
         <?php
         }
         if($user->role == 'funcionario' && $loggedRole == 'admin') {
@@ -20,18 +20,20 @@
         ?>
         <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexfuncionarios']) ?> </li>
         <?php
-        } else if($user->role == 'paciente') {
+        } else if($user->role == 'paciente' && $loggedRole == 'admin' || $loggedRole == 'funcionario') {
         ?>
             <li><?= $this->Html->link(__('Listar Pacientes'), ['action' => 'indexpacientes']) ?> </li>
             <li><?= $this->Html->link(__('Cadastrar Paciente'), ['action' => 'add']) ?> </li>
         <?php
-        } else {
+        } else if($loggedRole == 'admin' || $loggedRole == 'funcionario') {
         ?>
             <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?> </li>
             <li><?= $this->Html->link(__('Novo Usuário'), ['action' => 'add']) ?> </li>
         <?php
-        }
+        } else {
         ?>
+            <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?> </li>
+        <?php } ?>
     </ul>
 </nav>
 <div class="users view large-9 medium-8 columns content">

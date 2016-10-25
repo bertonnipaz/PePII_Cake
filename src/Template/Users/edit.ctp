@@ -4,7 +4,7 @@
         <li><?= $this->Form->postLink(
                 __('Deletar'),
                 ['action' => 'delete', $user->id],
-                ['confirm' => __('Tem certeza que deseja deletar # {0}?', $user->id)]
+                ['confirm' => __('Tem certeza que deseja deletar {0}?', $user->name)]
             )
         ?></li>
         <!-- <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?></li> -->

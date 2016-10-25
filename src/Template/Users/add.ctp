@@ -9,10 +9,12 @@
     <fieldset>
         <legend><?= __('Adicionar Usuário') ?></legend>
         <?php
+            echo "<h6>Os campos com o asterisco são obrigatórios</h6>
+            <br>";
             echo $this->Form->input('name', ['label' => 'Nome']);
             echo $this->Form->input('address', ['label' => 'Endereço']);
             echo $this->Form->input('mail', ['label' => 'E-mail']);
-            echo $this->Form->input('nasc', array( 'label' => 'Data de Nascimento', 'dateFormat' => 'DMY', 'minYear' => date('Y') - 70, 'maxYear' => date('Y') - 6 ));
+            echo $this->Form->input('nasc', array( 'label' => 'Data de Nascimento', 'dateFormat' => 'DMY', 'minYear' => date('Y') - 80, 'maxYear' => date('Y') - 6 ));
             echo $this->Form->input('rg', ['label' => 'RG']);
             echo $this->Form->input('cpf', ['label' => 'CPF']);
             echo $this->Form->input('mobile', ['label' => 'Celular']);
@@ -23,5 +25,6 @@
         ?>
     </fieldset>
     <?= $this->Form->button(__('Enviar')) ?>
+    <?= $this->Form->button('LIMPAR', ['type' => 'reset']); ?>
     <?= $this->Form->end() ?>
 </div>
