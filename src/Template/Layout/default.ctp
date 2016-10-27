@@ -28,31 +28,11 @@ $cakeDescription = 'Sistema de Cadastro';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
+    <!-- <?= $this->Html->css('meuEstilo.css') ?> -->
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
-
-    <!-- <style>
-        .login {
-            color: #fff;
-            background-color: #5cb85c;
-            border-color: #4cae4c;
-        }
-        .login:hover {
-            background-color: #449d44;
-            border-color: #255625;
-        }
-        .logout {
-            color: #fff;
-            background-color: #d9534f;
-            border-color: #d43f3a;
-        }
-        .logout:hover {
-            background-color: #c9302c;
-            border-color: #761c19;
-        }
-    </style> -->
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
