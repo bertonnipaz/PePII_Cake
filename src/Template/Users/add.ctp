@@ -25,6 +25,6 @@
         ?>
     </fieldset>
     <?= $this->Form->button(__('Enviar')) ?>
-    <?= $this->Form->button('LIMPAR', ['type' => 'reset']); ?>
+    <?= $this->Form->button('Limpar', ['type' => 'reset']); ?>
     <?= $this->Form->end() ?>
 </div>
