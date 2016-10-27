@@ -54,7 +54,8 @@ class UsersController extends AppController
             // var_dump($user);
             // $test = $this->request->data['search'];
             $users = $this->paginate($this->Users->find()
-                                                    ->where(['name LIKE' => '%' . $user->name . '%']));
+                                                    ->where(['name LIKE' => '%' . $user->name . '%'])
+                                                    ->andWhere(['role' => 'paciente']));
 
         }
         $this->set(compact('users'));
