@@ -1,0 +1,42 @@
+.content h3 {
+    color: #aabbcc;
+    padding-bottom: 0.5rem;
+    margin-bottom: 20px;
+}
+
+.content h4 {
+    color: #be140b;
+    padding-bottom: 0.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #be140b;
+}
+
+.form button[type="submit"] {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    float: right;
+    text-transform: none;
+    box-shadow: none;
+    border-radius: 5px;
+}
+
+.form button:hover, .form button:focus {
+    color: #fff;
+    background-color: #3a963a;
+    border-color: #4cae4c;
+    box-shadow: none;
+}
+
+.form button[type="reset"] {
+    color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+    float: left;
+    text-transform: none;
+    box-shadow: none;
+    border-radius: 5px;
+}
+
+button {
+}
