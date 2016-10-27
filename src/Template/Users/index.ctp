@@ -40,7 +40,7 @@
                 <!-- <td><?= h($user->password) ?></td> -->
                 <!-- <td><?= h($user->mail) ?></td> -->
                 <td><?= h($user->name) ?></td>
-                <td><?= h($user->nasc) ?></td>
+                <td><?= ($user->nasc->nice(null, 'pt_BR')) ?></td>
                 <td><?= h($user->role) ?></td>
                 <!-- <td><?= h($user->address) ?></td> -->
                 <!-- <td><?= h($user->rg) ?></td> -->

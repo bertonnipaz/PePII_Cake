@@ -85,7 +85,7 @@
         </tr> -->
         <tr>
             <th scope="row"><?= __('Data de Nascimento') ?></th>
-            <td><?= h($user->nasc) ?></td>
+            <td><?= ($user->nasc->nice(null, 'pt_BR')) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Criado') ?></th>
