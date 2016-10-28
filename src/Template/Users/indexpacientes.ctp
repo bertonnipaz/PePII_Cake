@@ -42,6 +42,7 @@
                 <td><?= h($user->name) ?></td>
                 <!-- <td><?= ($user->nasc->i18nFormat('dd/MM/yyyy')) ?></td> -->
                 <td><?= ($user->nasc->nice(null, 'pt_BR')) ?></td>
+                <!-- <td><?= date_format(new DateTime($user->nasc), "d/m/Y") ?></td> -->
                 <!-- <td><?= h($user->role) ?></td> -->
                 <!-- <td><?= h($user->address) ?></td> -->
                 <!-- <td><?= h($user->rg) ?></td> -->
