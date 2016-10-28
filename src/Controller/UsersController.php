@@ -40,7 +40,8 @@ class UsersController extends AppController
     {
         $users = $this->paginate($this->Users->find()
                                                     ->where(['role' => 'funcionario'])
-                                                    /*->orWhere(['role' => 'admin'])*/);
+                                                    ->order(['name' => 'ASC']));
+                                                    /*->orWhere(['role' => 'admin']));*/
 
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
@@ -55,7 +56,8 @@ class UsersController extends AppController
             // $test = $this->request->data['search'];
             $users = $this->paginate($this->Users->find()
                                                     ->where(['name LIKE' => '%' . $user->name . '%'])
-                                                    ->andWhere(['role' => 'paciente']));
+                                                    ->andWhere(['role' => 'paciente'])
+                                                    ->order(['name' => 'ASC']));
 
         }
         $this->set(compact('users'));
@@ -149,10 +151,10 @@ class UsersController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        // Allow users to register and logout.
+        // Allow users to logout only. Before, users could register too
         // You should not add the "login" action to allow list. Doing so would
         // cause problems with normal functioning of AuthComponent.
-        $this->Auth->allow(['add', 'logout']);
+        $this->Auth->allow(['logout']);
     }
 
 
