@@ -4,6 +4,18 @@
         <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        $('#cpf').focus();
+        $("#cpf").mask("999.999.999-99");
+        $('#rg').focus();
+        $("#rg").mask("9.999.999");
+        $('#mobile').focus();
+        $("#mobile").mask("(99)99999-9999");
+        $('#phone').focus();
+        $("#phone").mask("(99)9999-9999");
+    });
+</script>
 <div class="users form large-9 medium-8 columns content">
     <?= $this->Form->create($user) ?>
     <fieldset>
@@ -14,12 +26,12 @@
             echo $this->Form->input('name', ['label' => 'Nome']);
             echo $this->Form->input('address', ['label' => 'Endereço']);
             echo $this->Form->input('mail', ['label' => 'E-mail']);
-            echo $this->Form->input('nasc', array( 'label' => 'Data de Nascimento', 'dateFormat' => 'DMY', 'minYear' => date('Y') - 80, 'maxYear' => date('Y') - 6 ));
+            echo $this->Form->input('nasc', array( 'label' => 'Data de Nascimento', 'dateFormat' => 'DMY', 'minYear' => date('Y') - 85, 'maxYear' => date('Y') - 5 ));
             echo $this->Form->input('rg', ['label' => 'RG']);
             echo $this->Form->input('cpf', ['label' => 'CPF']);
             echo $this->Form->input('mobile', ['label' => 'Celular']);
             echo $this->Form->input('phone', ['label' => 'Telefone']);
-            echo $this->Form->input('role', ['label' => 'Papel', 'options' => ['admin' => 'Admin', 'funcionario' => 'Funcionário', 'paciente' => 'Paciente']]);
+            echo $this->Form->input('role', ['label' => 'Papel', 'options' => ['paciente' => 'Paciente', 'admin' => 'Admin', 'funcionario' => 'Funcionário']]);
             echo $this->Form->input('username', ['label' => 'Nome de Usuário']);
             echo $this->Form->input('password', ['label' => 'Senha']);
         ?>
