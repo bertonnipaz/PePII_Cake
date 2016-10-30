@@ -6,14 +6,11 @@
 </nav>
 <script type="text/javascript">
     jQuery(document).ready(function($){
-        $('#cpf').focus();
-        $("#cpf").mask("999.999.999-99");
-        $('#rg').focus();
         $("#rg").mask("9.999.999");
-        $('#mobile').focus();
+        $("#cpf").mask("999.999.999-99");
         $("#mobile").mask("(99)99999-9999");
-        $('#phone').focus();
         $("#phone").mask("(99)9999-9999");
+        $('#name').focus();
     });
 </script>
 <div class="users form large-9 medium-8 columns content">
