@@ -28,6 +28,8 @@ $cakeDescription = 'Sistema de Cadastro';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->script('jquery-1.12.0.min.js') ?>
+    <?= $this->Html->script('jquery.maskedinput.js') ?>
     <!-- <?= $this->Html->css('meuEstilo.css') ?> -->
 
     <?= $this->fetch('meta') ?>
