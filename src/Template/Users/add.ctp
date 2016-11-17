@@ -6,7 +6,7 @@
 </nav>
 <script type="text/javascript">
     jQuery(document).ready(function($){
-        $("#rg").mask("9.999.999");
+        // $("#rg").mask("9.999.999");
         $("#cpf").mask("999.999.999-99");
         $("#mobile").mask("(99)99999-9999");
         $("#phone").mask("(99)9999-9999");
