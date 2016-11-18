@@ -1,7 +1,7 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Ações') ?></li>
-        <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'indexPacientes']) ?></li>
     </ul>
 </nav>
 <script type="text/javascript">

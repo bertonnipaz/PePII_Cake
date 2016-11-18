@@ -14,16 +14,16 @@
         $loggedRole = $loguser['role'];
         if($user->role == 'funcionario' && $loggedRole == 'admin') {
         ?>
-            <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexfuncionarios']) ?> </li>
+            <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexFuncionarios']) ?> </li>
             <li><?= $this->Html->link(__('Cadastrar Novo Funcionário'), ['action' => 'add']) ?> </li>
         <?php
         } else if($user->role == 'funcionario' && $loggedRole != 'admin') {
         ?>
-        <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexfuncionarios']) ?> </li>
+        <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexFuncionarios']) ?> </li>
         <?php
         } else if($user->role == 'paciente') {
         ?>
-            <li><?= $this->Html->link(__('Listar Pacientes'), ['action' => 'indexpacientes']) ?> </li>
+            <li><?= $this->Html->link(__('Listar Pacientes'), ['action' => 'indexPacientes']) ?> </li>
             <li><?= $this->Html->link(__('Cadastrar Novo Paciente'), ['action' => 'add']) ?> </li>
         <?php
         } else {

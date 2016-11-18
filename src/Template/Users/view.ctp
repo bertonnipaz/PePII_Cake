@@ -13,16 +13,16 @@
         }
         if($user->role == 'funcionario' && $loggedRole == 'admin') {
         ?>
-            <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexfuncionarios']) ?> </li>
+            <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexFuncionarios']) ?> </li>
             <li><?= $this->Html->link(__('Novo Funcionário'), ['action' => 'add']) ?> </li>
         <?php
         } else if($user->role == 'funcionario' && $loggedRole != 'admin') {
         ?>
-        <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexfuncionarios']) ?> </li>
+        <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexFuncionarios']) ?> </li>
         <?php
         } else if($user->role == 'paciente' && $loggedRole == 'admin' || $loggedRole == 'funcionario') {
         ?>
-            <li><?= $this->Html->link(__('Listar Pacientes'), ['action' => 'indexpacientes']) ?> </li>
+            <li><?= $this->Html->link(__('Listar Pacientes'), ['action' => 'indexPacientes']) ?> </li>
             <li><?= $this->Html->link(__('Cadastrar Paciente'), ['action' => 'add']) ?> </li>
         <?php
         } else if($loggedRole == 'admin' || $loggedRole == 'funcionario') {

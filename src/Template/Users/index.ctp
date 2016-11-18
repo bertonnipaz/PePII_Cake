@@ -52,7 +52,6 @@
                 <td class="actions">
                     <?= $this->Html->link(__('Ver'), ['action' => 'view', $user->id]) ?>
                     <?php
-                $loguser = $this->request->session()->read ('Auth.User');
                 $loggedUser = $loguser['id'];
                 if($loggedUser == $user->id) {
                 ?>

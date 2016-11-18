@@ -12,7 +12,7 @@
  * @since         0.10.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
+use Cake\Routing\Router;
 $cakeDescription = 'Sistema de Cadastro';
 ?>
 <!DOCTYPE html>
@@ -59,19 +59,19 @@ $cakeDescription = 'Sistema de Cadastro';
                 if($loguser) {
                     $user = $loguser['username'];
                     ?>
-                    <li class="logout right"><a class="logout" href="/users/logout">Sair</a></li>
+                    <li class="logout right"><a class="logout" href="/logout">Sair</a></li>
                     <li class="left"><a href="#"><?= $mensagem ?>, <b><?= $user ?></b>!!</a></li>
                     <?php
                 } else {
                     ?>
-                    <li class="login right"><a class="login" href="/users/login">Entrar</a></li>
+                    <li class="login right"><a class="login" href="/">Entrar</a></li>
 
                     <?php
                 }
                 ?>
-                <li class="right"><a href="/users/indexbusca">Buscar</a></li>
-                <li class="right"><a href="/users/indexfuncionarios">Funcionários</a></li>
-                <li class="right"><a href="/users/indexpacientes">Pacientes</a></li>
+                <li class="right"><a href="<?= Router::url(['controller' => 'Users', 'action' => 'indexBusca']) ?>">Buscar</a></li>
+                <li class="right"><a href="<?= Router::url(['controller' => 'Users', 'action' => 'indexFuncionarios']) ?>">Funcionários</a></li>
+                <li class="right"><a href="<?= Router::url(['controller' => 'Users', 'action' => 'indexPacientes']) ?>">Pacientes</a></li>
             </ul>
         </div>
     </nav>
