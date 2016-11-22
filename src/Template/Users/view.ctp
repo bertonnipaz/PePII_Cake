@@ -1,3 +1,4 @@
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Ações') ?></li>
@@ -20,9 +21,11 @@
         ?>
         <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexFuncionarios']) ?> </li>
         <?php
-        } else if($user->role == 'paciente' && $loggedRole == 'admin' || $loggedRole == 'funcionario') {
+        } else if($user->role == 'paciente' && ($loggedRole == 'admin' || $loggedRole == 'funcionario')) {
         ?>
             <li><?= $this->Html->link(__('Listar Pacientes'), ['action' => 'indexPacientes']) ?> </li>
+            <li><?= $this->Html->link(__('Editar Paciente'), ['action' => 'edit', $user->id]) ?> </li>
+            <li><?= $this->Form->postLink(__('Deletar Paciente'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar {0}?', $user->name)]) ?> </li>
             <li><?= $this->Html->link(__('Cadastrar Paciente'), ['action' => 'add']) ?> </li>
         <?php
         } else if($loggedRole == 'admin' || $loggedRole == 'funcionario') {
