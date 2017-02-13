@@ -15,22 +15,22 @@
         $loggedRole = $loguser['role'];
         if($user->role == 'funcionario' && $loggedRole == 'admin') {
         ?>
-            <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexFuncionarios']) ?> </li>
-            <li><?= $this->Html->link(__('Cadastrar Novo Funcionário'), ['action' => 'add']) ?> </li>
+            <li><?= $this->Html->link(__('listar.funcionarios'), ['action' => 'indexFuncionarios']) ?> </li>
+            <li><?= $this->Html->link(__('cadastrar.funcionario'), ['action' => 'add']) ?> </li>
         <?php
         } else if($user->role == 'funcionario' && $loggedRole != 'admin') {
         ?>
-        <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexFuncionarios']) ?> </li>
+        <li><?= $this->Html->link(__('listar.funcionarios'), ['action' => 'indexFuncionarios']) ?> </li>
         <?php
         } else if($user->role == 'paciente') {
         ?>
-            <li><?= $this->Html->link(__('Listar Pacientes'), ['action' => 'indexPacientes']) ?> </li>
-            <li><?= $this->Html->link(__('Cadastrar Novo Paciente'), ['action' => 'add']) ?> </li>
+            <li><?= $this->Html->link(__('listar.pacientes'), ['action' => 'indexPacientes']) ?> </li>
+            <li><?= $this->Html->link(__('cadastrar.paciente'), ['action' => 'add']) ?> </li>
         <?php
         } else {
         ?>
-            <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?> </li>
-            <li><?= $this->Html->link(__('Cadastrar Novo Usuário'), ['action' => 'add']) ?> </li>
+            <!-- <li><?= $this->Html->link(__('Listar Usuários'), ['action' => 'index']) ?> </li> -->
+            <!-- <li><?= $this->Html->link(__('Cadastrar Novo Usuário'), ['action' => 'add']) ?> </li> -->
         <?php
         }
         ?>
@@ -39,7 +39,7 @@
 <div class="users form large-9 medium-8 columns content">
     <?= $this->Form->create($user) ?>
     <fieldset>
-        <legend><?= __('Editar Usuário') ?></legend>
+        <legend><?= __('editar.usuario') ?></legend>
         <?php
             $loguser = $this->request->session()->read ('Auth.User');
             $loggedRole = $loguser['role'];

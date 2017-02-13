@@ -6,15 +6,15 @@
             $loguser = $this->request->session()->read ('Auth.User');
             $loggedUser = $loguser['id'];
             $loggedRole = $loguser['role'];
-            if($loggedUser == $user->id || $loggedRole == 'funcionario') {
+            if($loggedUser == $user->id || $loggedRole == 'funcionario' && $user->role != 'paciente') {
         ?>
-        <li><?= $this->Html->link(__('Editar Usuário'), ['action' => 'edit', $user->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Deletar Usuário'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar {0}?', $user->name)]) ?> </li>
+        <li><?= $this->Html->link(__('editar.usuario'), ['action' => 'edit', $user->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('deletar.usuario'), ['action' => 'delete', $user->id], ['confirm' => __('delete.user', $user->name)]) ?> </li>
         <?php
         }
         if($user->role == 'funcionario' && $loggedRole == 'admin') {
         ?>
-            <li><?= $this->Html->link(__('Listar Funcionários'), ['action' => 'indexFuncionarios']) ?> </li>
+            <li><?= $this->Html->link(__(''), ['action' => 'indexFuncionarios']) ?> </li>
             <li><?= $this->Html->link(__('Novo Funcionário'), ['action' => 'add']) ?> </li>
         <?php
         } else if($user->role == 'funcionario' && $loggedRole != 'admin') {
@@ -23,10 +23,10 @@
         <?php
         } else if($user->role == 'paciente' && ($loggedRole == 'admin' || $loggedRole == 'funcionario')) {
         ?>
-            <li><?= $this->Html->link(__('Listar Pacientes'), ['action' => 'indexPacientes']) ?> </li>
-            <li><?= $this->Html->link(__('Editar Paciente'), ['action' => 'edit', $user->id]) ?> </li>
-            <li><?= $this->Form->postLink(__('Deletar Paciente'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar {0}?', $user->name)]) ?> </li>
-            <li><?= $this->Html->link(__('Cadastrar Paciente'), ['action' => 'add']) ?> </li>
+            <li><?= $this->Html->link(__('listar.pacientes'), ['action' => 'indexPacientes']) ?> </li>
+            <li><?= $this->Html->link(__('editar.paciente'), ['action' => 'edit', $user->id]) ?> </li>
+            <li><?= $this->Form->postLink(__('deletar.paciente'), ['action' => 'delete', $user->id], ['confirm' => __('delete.user', $user->name)]) ?> </li>
+            <li><?= $this->Html->link(__('cadastrar.paciente'), ['action' => 'add']) ?> </li>
         <?php
         } else if($loggedRole == 'admin' || $loggedRole == 'funcionario') {
         ?>

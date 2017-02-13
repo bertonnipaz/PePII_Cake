@@ -91,11 +91,11 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('O usuário foi salvo com sucesso.'));
+                $this->Flash->success(__('usuario.salvo'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('O usuário não pôde ser salvo. Por favor, tente de novo.'));
+                $this->Flash->error(__('usuario.nao.salvo'));
             }
         }
         $this->set(compact('user'));
@@ -117,11 +117,11 @@ class UsersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('O usuário foi salvo com sucesso.'));
+                $this->Flash->success(__('usuario.salvo'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('O usuário não pôde ser salvo. Por favor, tente de novo.'));
+                $this->Flash->error(__('usuario.nao.salvo'));
             }
         }
         $this->set(compact('user'));

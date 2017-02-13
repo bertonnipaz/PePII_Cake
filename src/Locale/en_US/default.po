@@ -1,0 +1,65 @@
+msgid "usuario.salvo"
+msgstr "User saved successfully."
+
+msgid "usuario.nao.salvo"
+msgstr "User could not be saved. Please, try again."
+
+msgid "editar.usuario"
+msgstr "Edit User"
+
+msgid "deletar.usuario"
+msgstr "Delete User"
+
+msgid "editar.paciente"
+msgstr "Edit Pacient"
+
+msgid "deletar.paciente"
+msgstr "Delete Pacient"
+
+msgid "listar.pacientes"
+msgstr "List Pacients"
+
+msgid "cadastrar.paciente"
+msgstr "Add Pacient"
+
+msgid "cadastrar.funcionario"
+msgstr "Add Employee"
+
+msgid "delete.user"
+msgstr "Are you sure you want to delete {0}?"
+
+msgid "editar.usuario"
+msgstr "Edit User"
+
+msgid "titulo.funcionarios"
+msgstr "Employees"
+
+msgid "buscar.paciente"
+msgstr "Search Pacient"
+
+msgid "msg.de.busca"
+msgstr "Type the name of the pacient you want to find"
+
+msgid "titulo.pacientes"
+msgstr "Pacients"
+
+msgid "msg.login"
+msgstr "Please, enter with your username and password"
+
+msgid "menu.busca"
+msgstr "Search"
+
+msgid "menu.pacientes"
+msgstr "Pacients"
+
+msgid "menu.funcionarios"
+msgstr "Employees"
+
+msgid "menu.sair"
+msgstr "Logout"
+
+msgid "menu.entrar"
+msgstr "Login"
+
+msgid "msg.bem-vindo"
+msgstr "Welcome"
