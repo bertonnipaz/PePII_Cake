@@ -46,32 +46,23 @@ $cakeDescription = 'Sistema de Cadastro';
         <div class="top-bar-section">
             <ul class="nav navbar-nav navbar-right">
                 <?php
-                // Formato 24 horas (de 1 a 24)
-                $hora = date('G');
-                if (($hora >= 6) AND ($hora < 15)) {
-                    $mensagem = "Bom dia";
-                } else if (($hora >= 15) AND ($hora < 21)) {
-                    $mensagem = "Boa tarde";
-                } else {
-                    $mensagem = "Boa noite";
-                }
                 $loguser = $this->request->session()->read ('Auth.User');
                 if($loguser) {
                     $user = $loguser['username'];
                     ?>
-                    <li class="logout right"><a class="logout" href="/logout">Sair</a></li>
-                    <li class="left"><a href="#"><?= $mensagem ?>, <b><?= $user ?></b>!!</a></li>
+                    <li class="logout right"><a class="logout" href="/logout"><?= __('menu.sair') ?></a></li>
+                    <li class="left"><a href="#"><?= __('msg.bem-vindo') ?>, <b><?= $user ?></b>!!</a></li>
                     <?php
                 } else {
                     ?>
-                    <li class="login right"><a class="login" href="/">Entrar</a></li>
+                    <li class="login right"><a class="login" href="/"><?= __('menu.entrar') ?></a></li>
 
                     <?php
                 }
                 ?>
-                <li class="right"><a href="<?= Router::url(['controller' => 'Users', 'action' => 'indexBusca']) ?>">Buscar</a></li>
-                <li class="right"><a href="<?= Router::url(['controller' => 'Users', 'action' => 'indexFuncionarios']) ?>">Funcionários</a></li>
-                <li class="right"><a href="<?= Router::url(['controller' => 'Users', 'action' => 'indexPacientes']) ?>">Pacientes</a></li>
+                <li class="right"><a href="<?= Router::url(['controller' => 'Users', 'action' => 'indexBusca']) ?>"><?= __('menu.busca') ?></a></li>
+                <li class="right"><a href="<?= Router::url(['controller' => 'Users', 'action' => 'indexFuncionarios']) ?>"><?= __('menu.funcionarios') ?></a></li>
+                <li class="right"><a href="<?= Router::url(['controller' => 'Users', 'action' => 'indexPacientes']) ?>"><?= __('menu.pacientes') ?></a></li>
             </ul>
         </div>
     </nav>

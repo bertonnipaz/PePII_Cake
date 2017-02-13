@@ -7,12 +7,12 @@
         $loggedRole = $loguser['role'];
         if($loggedRole == 'funcionario' || $loggedRole == 'admin') {
         ?>
-        <li><?= $this->Html->link(__('Cadastrar Paciente'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('cadastrar.paciente'), ['action' => 'add']) ?></li>
         <?php } ?>
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">
-    <h3><?= __('Pacientes') ?></h3>
+    <h3><?= __('titulo.pacientes') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -43,7 +43,6 @@
                 <td><?= h($user->name) ?></td>
                 <!-- <td><?= ($user->nasc->i18nFormat('dd/MM/yyyy')) ?></td> -->
                 <td><?= ($user->nasc->nice(null, 'pt_BR')) ?></td>
-                <!-- <td><?= date_format(new DateTime($user->nasc), "d/m/Y") ?></td> -->
                 <!-- <td><?= h($user->role) ?></td> -->
                 <!-- <td><?= h($user->address) ?></td> -->
                 <!-- <td><?= h($user->rg) ?></td> -->
@@ -58,7 +57,7 @@
                 ?>
                 <?= $this->Html->link(__('Ver'), ['action' => 'view', $user->id]) ?>
                 <?= $this->Html->link(__('Editar'), ['action' => 'edit', $user->id]) ?>
-                <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $user->id], ['confirm' => __('Tem certeza que deseja deletar {0}?', $user->name)]) ?>
+                <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $user->id], ['confirm' => __('delete.user {0}?', $user->name)]) ?>
                 <?php
                 }
                 ?>

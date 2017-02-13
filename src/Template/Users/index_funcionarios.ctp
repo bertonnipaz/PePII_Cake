@@ -7,14 +7,14 @@
         $role = $loguser['role'];
         if($role == 'admin') {
         ?>
-            <li><?= $this->Html->link(__('Cadastrar Funcionário'), ['action' => 'add']) ?></li>
+            <li><?= $this->Html->link(__('cadastrar.funcionario'), ['action' => 'add']) ?></li>
         <?php
         }
         ?>
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">
-    <h3><?= __('Funcionários') ?></h3>
+    <h3><?= __('titulo.funcionarios') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>

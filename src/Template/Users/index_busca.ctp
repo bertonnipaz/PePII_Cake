@@ -2,15 +2,15 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Ações') ?></li>
-        <li><?= $this->Html->link(__('Buscar Paciente'), ['action' => 'indexBusca']) ?></li>
+        <li><?= $this->Html->link(__('buscar.paciente'), ['action' => 'indexBusca']) ?></li>
     </ul>
 </nav>
 <div class="users form large-9 medium-8 columns content">
-    <h3><?= __('Buscar Paciente') ?></h3>
+    <h3><?= __('buscar.paciente') ?></h3>
     <?= $this->Flash->render('name') ?>
     <?= $this->Form->create() ?>
     <fieldset>
-        <legend><?= __('Digite o nome do paciente que deseja encontrar') ?></legend>
+        <legend><?= __('msg.de.busca') ?></legend>
         <?= $this->Form->input('name', ['label' => 'Procurar']) ?>
     </fieldset>
     <?= $this->Form->button(__('Buscar')); ?>

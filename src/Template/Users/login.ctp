@@ -10,7 +10,7 @@
 <?= $this->Flash->render('auth') ?>
 <?= $this->Form->create() ?>
     <fieldset>
-        <legend><?= __('Por favor, entre com o nome de usuário e senha') ?></legend>
+        <legend><?= __('msg.login') ?></legend>
         <?= $this->Form->input('username', ['label' => 'Usuário']) ?>
         <?= $this->Form->input('password', ['label' => 'Senha']) ?>
     </fieldset>
