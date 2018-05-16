@@ -25,6 +25,9 @@ msgstr "Cadastrar Paciente"
 msgid "cadastrar.funcionario"
 msgstr "Cadastrar Funcionário"
 
+msgid "listar.funcionarios"
+msgstr "Listar Funcionários"
+
 msgid "delete.user"
 msgstr "Tem certeza que deseja deletar {0}?"
 
@@ -63,3 +66,9 @@ msgstr "Entrar"
 
 msgid "msg.bem-vindo"
 msgstr "Bem vindo(a)"
+
+msgid "titulo.acoes"
+msgstr "Ações"
+
+msgid "paciente.nao.encontrado"
+msgstr "A consulta não obteve resultados"

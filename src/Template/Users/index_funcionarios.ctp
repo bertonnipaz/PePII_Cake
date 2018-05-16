@@ -1,7 +1,7 @@
 
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Ações') ?></li>
+        <li class="heading"><?= __('titulo.acoes') ?></li>
         <?php
         $loguser = $this->request->session()->read ('Auth.User');
         $role = $loguser['role'];

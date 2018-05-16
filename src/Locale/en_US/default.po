@@ -11,16 +11,19 @@ msgid "deletar.usuario"
 msgstr "Delete User"
 
 msgid "editar.paciente"
-msgstr "Edit Pacient"
+msgstr "Edit Patient"
 
 msgid "deletar.paciente"
-msgstr "Delete Pacient"
+msgstr "Delete Patient"
 
 msgid "listar.pacientes"
-msgstr "List Pacients"
+msgstr "List Patients"
 
 msgid "cadastrar.paciente"
-msgstr "Add Pacient"
+msgstr "Add Patient"
+
+msgid "listar.funcionarios"
+msgstr "List Employees"
 
 msgid "cadastrar.funcionario"
 msgstr "Add Employee"
@@ -35,13 +38,13 @@ msgid "titulo.funcionarios"
 msgstr "Employees"
 
 msgid "buscar.paciente"
-msgstr "Search Pacient"
+msgstr "Search Patient"
 
 msgid "msg.de.busca"
-msgstr "Type the name of the pacient you want to find"
+msgstr "Type the name of the patient you want to find"
 
 msgid "titulo.pacientes"
-msgstr "Pacients"
+msgstr "Patients"
 
 msgid "msg.login"
 msgstr "Please, enter with your username and password"
@@ -50,7 +53,7 @@ msgid "menu.busca"
 msgstr "Search"
 
 msgid "menu.pacientes"
-msgstr "Pacients"
+msgstr "Patients"
 
 msgid "menu.funcionarios"
 msgstr "Employees"
@@ -63,3 +66,9 @@ msgstr "Login"
 
 msgid "msg.bem-vindo"
 msgstr "Welcome"
+
+msgid "titulo.acoes"
+msgstr "Actions"
+
+msgid "paciente.nao.encontrado"
+msgstr "The query did not match"

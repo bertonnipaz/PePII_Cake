@@ -13,6 +13,7 @@
         <legend><?= __('msg.login') ?></legend>
         <?= $this->Form->input('username', ['label' => 'Usuário']) ?>
         <?= $this->Form->input('password', ['label' => 'Senha']) ?>
+    <a href="/users/add">Not registered yet? Click here.</a>
     </fieldset>
 <?= $this->Form->button(__('Login')); ?>
 <?= $this->Form->end() ?>

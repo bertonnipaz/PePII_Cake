@@ -1,7 +1,7 @@
 
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Ações') ?></li>
+        <li class="heading"><?= __('titulo.acoes') ?></li>
         <li><?= $this->Html->link(__('buscar.paciente'), ['action' => 'indexBusca']) ?></li>
     </ul>
 </nav>
@@ -84,11 +84,8 @@
 
 
 <?php } else if (isset($users) && count($users) == 0) { ?>
-<br>
-<br>
-<br>
-<br>
-<h3>A consulta não obteve resultados</h3>
+<br><br><br><br>
+<h3><?= __('paciente.nao.encontrado') ?></h3>
 
 <?php } ?>
 </div>
